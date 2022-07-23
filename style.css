@@ -3,7 +3,7 @@ body{
 }
 /* used to set a different logo */
 .nav-bar__logo img {
-    content: url(https://assets.turbologo.com/blog/en/2018/03/19085254/prozrachniy-logo-1-800x575.png);
+    content: url(https://raw.githubusercontent.com/tanphan-vn/css/main/prophet.png);
 }
 .top-bar{
     background: #232222;
@@ -29,4 +29,4 @@ body{
 }
 
 .nav-bar__logo img {
-    content: url(https://assets.turbologo.com/blog/en/2018/03/19085254/prozrachniy-logo-1-800x575.png);
+    content: url(https://raw.githubusercontent.com/tanphan-vn/css/main/prophet.png);

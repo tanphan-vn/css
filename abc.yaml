@@ -45,6 +45,7 @@ kind: Ingress
 metadata:
   namespace: game-2048
   name: ingress-2048
+  annotation:
 spec:
   ingressClassName: external-alb
   rules:

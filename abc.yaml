@@ -46,10 +46,6 @@ metadata:
   namespace: game-2048
   name: ingress-2048
   annotations:
-    alb.ingress.kubernetes.io/subnets: subnet-04c822934ef8ac950, subnet-03db3fdb72dee998e, subnet-06df06028dd6b208e
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/ssl-redirect: '443'
-    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-2:782606156876:certificate/41cbad03-4516-49bc-8a80-d99ed9ce259f" 
 spec:
   ingressClassName: external-alb
   rules:

@@ -51,6 +51,7 @@ metadata:
 spec:
   ingressClassName: external-alb
   rules:
+    - host: game2048.betprophet.co
     - http:
         paths:
         - path: /

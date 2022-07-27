@@ -98,7 +98,7 @@ spec:
     - host: game2048-staging.betprophet.co
     - http:
         paths:
-        - path: /
+        - path: /*
           pathType: Prefix
           backend:
             service:

@@ -40,7 +40,7 @@ spec:
   selector:
     app.kubernetes.io/name: app-2048
 ---
-apiVersion: networking.k8s.io/v1
+apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   namespace: alb-controller-prod
@@ -62,7 +62,7 @@ spec:
             service:
               name: external-nginx-ingress-nginx-external-prod
               port:
-                name: 8http
+                name: http
 
 ---
 apiVersion: networking.k8s.io/v1

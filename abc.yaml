@@ -43,8 +43,8 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  namespace: game-2048
-  name: ingress-2048
+  namespace: alb-controller-prod
+  name: alb-ingress-connect-nginx
   annotations:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
@@ -53,16 +53,15 @@ metadata:
 spec:
   ingressClassName: external-alb
   rules:
-    - host: game2048.betprophet.co
     - http:
         paths:
         - path: /
           pathType: Prefix
           backend:
             service:
-              name: service-2048
+              name: external-nginx-ingress-nginx-external-prod
               port:
-                number: 80
+                name: 8http
 
 ---
 apiVersion: networking.k8s.io/v1
@@ -71,12 +70,8 @@ metadata:
   namespace: game-2048
   name: ingress-2048-1
   annotations:
-    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}, {"HTTPS": 443}]'
-    alb.ingress.kubernetes.io/ssl-redirect: '443'
-    alb.ingress.kubernetes.io/subnets: subnet-056734389646612d7, subnet-035297aab00376015, subnet-024107673ef54fa87
-    alb.ingress.kubernetes.io/certificate-arn: "arn:aws:acm:us-east-2:782606156876:certificate/41cbad03-4516-49bc-8a80-d99ed9ce259f"
 spec:
-  ingressClassName: external-alb
+  ingressClassName: external-prod
   rules:
     - host: game2048-staging.betprophet.co
     - http:
